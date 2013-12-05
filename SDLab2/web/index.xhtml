@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <br />
+        <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
+        <br />
+        <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
+        <br />
+        <h:link outcome="/usuario/List" value="Show All Usuario Items"/>
+    </h:body>
+
+
+
+    <f:view>
+        <h:form>
+            <h:form>
+                <h1><h:outputText value="Servidor de Archvios WEGA"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Usuario" for="usuarioUsername" />
+                    <h:inputText id="usuarioUsername" value="#{usuarioController.selected.usuarioUsername}" title="UsuarioUsername" />
+                    <h:outputLabel value="Contraseña" for="usuarioPassword" />
+                    <h:inputSecret id="usuarioPassword" value="#{usuarioController.selected.usuarioPassword}" title="UsuarioPassword" />
+                </h:panelGrid>
+                <h
+            </h:form>
+            
+        </h:form>
+        </h:form>
+    </f:view>
+
+
+</html>
+

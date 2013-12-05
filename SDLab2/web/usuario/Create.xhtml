@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="OLi crea tu usuario desu"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_usuarioId}" for="usuarioId" />
+                    <h:inputText id="usuarioId" value="#{usuarioController.selected.usuarioId}" title="#{bundle.CreateUsuarioTitle_usuarioId}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_usuarioId}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_usuarioUsername}" for="usuarioUsername" />
+                    <h:inputText id="usuarioUsername" value="#{usuarioController.selected.usuarioUsername}" title="#{bundle.CreateUsuarioTitle_usuarioUsername}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_usuarioUsername}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_usuarioPassword}" for="usuarioPassword" />
+                    <h:inputText id="usuarioPassword" value="#{usuarioController.selected.usuarioPassword}" title="#{bundle.CreateUsuarioTitle_usuarioPassword}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_usuarioPassword}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{usuarioController.prepareList}" value="#{bundle.CreateUsuarioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateUsuarioIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
